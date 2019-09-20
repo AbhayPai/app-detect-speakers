@@ -29,9 +29,6 @@ class AppDetectSpeakers extends React.Component {
         this.ambientPan = this.ambientContext.createStereoPanner();
         this.source = this.ambientContext.
             createMediaElementSource(this.ambientAudio);
-
-        // eslint-disable-next-line
-        console.log(navigator.mediaDevices);
     }
 
     /*
@@ -44,22 +41,24 @@ class AppDetectSpeakers extends React.Component {
          */
         return (
             <Fragment>
-                <h1>Click to detect your speaker!!!</h1>
-                <p>
-                    <a id='left' title='Detect Left' onClick={this.panToLeftHandler}>
+                <div className='container-fluid'>
+                    <h1>Click to detect your speaker!!!</h1>
+                    <a id='left' title='Detect Left' onClick={this.panToLeftHandler}
+                        className='btn btn-primary text-white mr-2'
+                    >
                         Detect Left Speaker
                     </a>
-                </p>
-                <p>
-                    <a id='right' title='Detect RIght' onClick={this.panToRightHandler}>
+                    <a id='right' title='Detect RIght' onClick={this.panToRightHandler}
+                        className='btn btn-primary text-white mr-2'
+                    >
                         Detect Right Speaker
                     </a>
-                </p>
-                <p>
-                    <a id='stereo' title='Detect Stereo' onClick={this.panToStereoHandler}>
+                    <a id='stereo' title='Detect Stereo' onClick={this.panToStereoHandler}
+                        className='btn btn-primary text-white'
+                    >
                         Detect Stereo Speaker
                     </a>
-                </p>
+                </div>
             </Fragment>
         );
     }

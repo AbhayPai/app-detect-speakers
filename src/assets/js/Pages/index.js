@@ -12,6 +12,7 @@ import ReactDOM from 'react-dom';
 /*
  *  All Usable React Reusable Components in this File
  */
+import Navbar from 'ComponentsPath/Navbar';
 import AppDetectSpeakers from 'ComponentsPath/AppDetectSpeakers';
 
 class Index {
@@ -38,7 +39,10 @@ class Index {
     render () {
         if (document.getElementById('app')) {
             ReactDOM.render(
-                <AppDetectSpeakers />,
+                <React.Fragment>
+                    <Navbar />
+                    <AppDetectSpeakers />
+                </React.Fragment>,
                 document.getElementById('app')
             );
         }
