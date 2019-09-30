@@ -25,7 +25,7 @@ class AppDetectSpeakers extends React.Component {
     componentDidMount() {
         let AudioContext = window.AudioContext || window.webkitAudioContext;
         this.ambientContext = new AudioContext();
-        this.ambientAudio = new Audio('../Early-Morning-Bird-Song.wav');
+        this.ambientAudio = new Audio('./Early-Morning-Bird-Song.wav');
         this.ambientPan = this.ambientContext.createStereoPanner();
         this.source = this.ambientContext.
             createMediaElementSource(this.ambientAudio);
