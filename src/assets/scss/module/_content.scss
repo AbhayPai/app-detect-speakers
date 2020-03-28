@@ -1,0 +1,36 @@
+.content {
+  &--breadcrumb {
+    padding: 20px;
+    border-top: 1px solid $silver;
+    border-bottom: 1px solid $silver;
+  }
+
+  &--title {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  &--column {
+    width: 33.33%;
+    padding: 20px 0px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &--button {
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: $azure-radiance;
+    border: 1px solid $azure-radiance;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    &--column {
+      width: 100%;
+    }
+  }
+}

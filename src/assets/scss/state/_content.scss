@@ -1,0 +1,11 @@
+.content {
+  &--button {
+    &.active,
+    &:hover,
+    &:focus {
+      color: $white;
+      outline: none;
+      background-color: $azure-radiance;
+    }
+  }
+}

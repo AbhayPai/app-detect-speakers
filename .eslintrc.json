@@ -25,7 +25,7 @@
     "rules": {
         "indent": [
             "error",
-            4,
+            2,
             {
                 "SwitchCase": 1
             }
@@ -41,7 +41,7 @@
         "max-len": [
             "error",
             {
-                "code": 80,
+                "code": 120,
                 "ignoreUrls": true,
                 "ignoreStrings": true,
                 "ignoreRegExpLiterals": true,
@@ -50,11 +50,11 @@
         ],
         "react/jsx-indent": [
             "error",
-            4
+            2
         ],
         "react/jsx-indent-props": [
             2,
-            4
+            2
         ],
         "no-undef": "error",
         "no-unused-vars": "error",
