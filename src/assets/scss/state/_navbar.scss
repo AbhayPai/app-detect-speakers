@@ -1,0 +1,57 @@
+.navbar {
+  &--menu__link {
+    &:focus,
+    &:hover,
+    &.active {
+      color: $white;
+      outline: none;
+      background-color: $azure-radiance;
+    }
+  }
+
+  &--hamburger,
+  &--x {
+    &:focus,
+    &:hover  {
+      outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    &--hamburger {
+      &.show {
+        display: block;
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    &--x {
+      &.show {
+        display: block;
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    &--menu__header {
+      &.active {
+        display: block;
+      }
+
+      &.show {
+        display: block;
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}
