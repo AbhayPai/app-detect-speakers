@@ -1,6 +1,7 @@
 module.exports = function(config) {
     this.entry = {
         index: config.Path.join(config.Webpack_DIR, 'src/assets/js/Pages/index.js'),
+        promises: config.Path.join(config.Webpack_DIR, 'src/assets/js/Pages/promises.js'),
     };
 
     this.alias = {
@@ -45,6 +46,34 @@ module.exports = function(config) {
                     ],
                     js: [
                         './js/index.' + config.CustomTimeHash + '.js',
+                    ]
+                }
+            }),
+            new config.HtmlWebpackPlugin({
+                title: 'Promises',
+                inject: false,
+                minify: {
+                    removeComments: true,
+                    useShortDoctype: true,
+                    collapseWhitespace: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true,
+                },
+                template: config.Path.join(
+                    config.Webpack_DIR,
+                    'src/templates/html/',
+                    'templateIndex.html'
+                ),
+                filename: config.Path.join(
+                    config.Webpack_DIR,
+                    './',
+                    'promises.html'
+                ),
+                assets: {
+                    css: [],
+                    js: [
+                        './js/promises.' + config.CustomTimeHash + '.js',
                     ]
                 }
             }),
