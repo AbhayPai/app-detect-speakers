@@ -10,7 +10,7 @@ const Navbar = () => {
     <React.Fragment>
       <nav className='navbar'>
         <div className='navbar--logo'>
-          <a className='navbar--logo__link' title='Abhay Pai' href='https://abhaypai.github.io/profile/web/#/about'>
+          <a className='navbar--logo__link' title='Abhay Pai' href='#'>
             <img src='./images/ap-logo.jpg' alt='Abhay Pai' className='navbar--logo__img' />
           </a>
         </div>
@@ -29,37 +29,37 @@ const Navbar = () => {
         <div className='navbar--menu'>
           <ul className={mobileMenu ? 'navbar--menu__header hide' : 'navbar--menu__header show'}>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/about'>
+              <a className='navbar--menu__link' href='#'>
                 About
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/skills'>
+              <a className='navbar--menu__link' href='#'>
                 Skills
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/education'>
+              <a className='navbar--menu__link' href='#'>
                 Education
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/work-experience'>
+              <a className='navbar--menu__link' href='#'>
                 Work Experience
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link active' href='https://abhaypai.github.io/profile/web/#/project'>
+              <a className='navbar--menu__link active' href='#'>
                 Project App Detector
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/basic-frameworks'>
+              <a className='navbar--menu__link' href='#'>
                 Basic Frameworks
               </a>
             </li>
             <li className='navbar--menu__list'>
-              <a className='navbar--menu__link' href='https://abhaypai.github.io/profile/web/#/concepts'>
+              <a className='navbar--menu__link' href='#'>
                 Concepts
               </a>
             </li>

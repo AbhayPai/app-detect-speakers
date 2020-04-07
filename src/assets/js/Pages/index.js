@@ -7,23 +7,17 @@ require('SassPath/pages/index.scss');
  *  All Usable Libraries in this File
  */
 import React from 'react';
+import Bowser from "bowser";
 import ReactDOM from 'react-dom';
 
 /*
  *  All Usable React Reusable Components in this File
  */
 import Navbar from 'ComponentsPath/Navbar';
+import BrowserMessage from 'ComponentsPath/BrowserMessage';
 import AppDetectSpeakers from 'ComponentsPath/AppDetectSpeakers';
 
 class Index {
-  /*
-    *  @constructor
-    *  all definition of variable should be done inside this
-    */
-  constructor () {
-    this.name = 'App Audio';
-  }
-
   /*
     *  @init
     *  all trigger of main function should be done inside this
@@ -38,13 +32,25 @@ class Index {
     */
   render () {
     if (document.getElementById('app')) {
-      ReactDOM.render(
-        <React.Fragment>
-          <Navbar />
-          <AppDetectSpeakers />
-        </React.Fragment>,
-        document.getElementById('app')
-      );
+      const unSupportedBrowserList = ['Safari', 'Internet Explorer', 'Opera'];
+
+      if(unSupportedBrowserList.indexOf(Bowser.name) === -1) {
+        ReactDOM.render(
+          <React.Fragment>
+            <Navbar />
+            <AppDetectSpeakers />
+          </React.Fragment>,
+          document.getElementById('app')
+        );
+      } else {
+        ReactDOM.render(
+          <React.Fragment>
+            <Navbar />
+            <BrowserMessage />
+          </React.Fragment>,
+          document.getElementById('app')
+        );
+      }
     }
   }
 }
