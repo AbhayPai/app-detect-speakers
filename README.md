@@ -18,3 +18,11 @@
 - Avoid styling using id.
 - Avoid using element selector directly.
 - Avoid deep selector (not greater than 3).
+
+
+# Concept Explanation.
+* Used (Web_Audio_API)[https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API] which is inbuilt in most (modern browsers)[https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API#Browser_compatibility].
+* (BaseAudioContext)[https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext] is the interface being used which is defined under (Web_Audio_API)[https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API].
+* Now for creating panning effect, (createStereoPanner)[https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createStereoPanner] which is defined in (BaseAudioContext)[https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext].
+* (Audio)[https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio] constructor is used to play audio file.
+

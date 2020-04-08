@@ -15,10 +15,10 @@ class AppDetectSpeakers extends React.Component {
       audioRight: false,
       audioStereo: false
     };
-    this.source = null;
-    this.ambientPan = null;
-    this.ambientAudio = null;
-    this.ambientContext = null;
+    this.audioFile = null;
+    this.nodePanner = null;
+    this.audio = null;
+    this.audioContext = null;
     this.panToLeftHandler = this.panToLeftHandler.bind(this);
     this.panToRightHandler = this.panToRightHandler.bind(this);
     this.panToStereoHandler = this.panToStereoHandler.bind(this);
@@ -30,10 +30,10 @@ class AppDetectSpeakers extends React.Component {
     */
   componentDidMount() {
     let AudioContext = window.AudioContext || window.webkitAudioContext;
-    this.ambientContext = new AudioContext();
-    this.ambientAudio = new Audio('./Early-Morning-Bird-Song.wav');
-    this.ambientPan = this.ambientContext.createStereoPanner();
-    this.source = this.ambientContext.createMediaElementSource(this.ambientAudio);
+    this.audioContext = new AudioContext();
+    this.nodePanner = this.audioContext.createStereoPanner();
+    this.audio = new Audio('./Early-Morning-Bird-Song.wav');
+    this.audioFile = this.audioContext.createMediaElementSource(this.audio);
   }
 
   /*
@@ -81,7 +81,7 @@ class AppDetectSpeakers extends React.Component {
     *  Custom Function
     */
   panToLeftHandler() {
-    if (!this.ambientPan && !this.source && this.ambientAudio && this.ambientContext) {
+    if (!this.nodePanner && !this.audioFile && this.audio && this.audioContext) {
       return;
     }
 
@@ -89,20 +89,20 @@ class AppDetectSpeakers extends React.Component {
       return;
     }
 
-    this.ambientContext.resume();
-    this.ambientPan.pan.value = -1;
-    this.source.connect(this.ambientPan);
-    this.ambientPan.connect(this.ambientContext.destination);
-    this.ambientAudio.play();
+    this.audioContext.resume();
+    this.nodePanner.pan.value = -1;
+    this.audioFile.connect(this.nodePanner);
+    this.nodePanner.connect(this.audioContext.destination);
+    this.audio.play();
 
-    this.ambientAudio.onplaying = () => {
+    this.audio.onplaying = () => {
       this.setState({
         audio: true,
         audioLeft: true
       });
     };
 
-    this.ambientAudio.onended = () => {
+    this.audio.onended = () => {
       this.setState({
         audio: false,
         audioLeft: false
@@ -115,7 +115,7 @@ class AppDetectSpeakers extends React.Component {
     *  Custom Function
     */
   panToRightHandler() {
-    if (!this.ambientPan && !this.source && this.ambientAudio && this.ambientContext) {
+    if (!this.nodePanner && !this.audioFile && this.audio && this.audioContext) {
       return;
     }
 
@@ -123,20 +123,20 @@ class AppDetectSpeakers extends React.Component {
       return;
     }
 
-    this.ambientContext.resume();
-    this.ambientPan.pan.value = 1;
-    this.source.connect(this.ambientPan);
-    this.ambientPan.connect(this.ambientContext.destination);
-    this.ambientAudio.play();
+    this.audioContext.resume();
+    this.nodePanner.pan.value = 1;
+    this.audioFile.connect(this.nodePanner);
+    this.nodePanner.connect(this.audioContext.destination);
+    this.audio.play();
 
-    this.ambientAudio.onplaying = () => {
+    this.audio.onplaying = () => {
       this.setState({
         audio: true,
         audioRight: true
       });
     };
 
-    this.ambientAudio.onended = () => {
+    this.audio.onended = () => {
       this.setState({
         audio: false,
         audioRight: false
@@ -149,7 +149,7 @@ class AppDetectSpeakers extends React.Component {
     *  Custom Function
     */
   panToStereoHandler() {
-    if (!this.ambientPan && !this.source && this.ambientAudio && this.ambientContext) {
+    if (!this.nodePanner && !this.audioFile && this.audio && this.audioContext) {
       return;
     }
 
@@ -157,20 +157,20 @@ class AppDetectSpeakers extends React.Component {
       return;
     }
 
-    this.ambientContext.resume();
-    this.ambientPan.pan.value = 0;
-    this.source.connect(this.ambientPan);
-    this.ambientPan.connect(this.ambientContext.destination);
-    this.ambientAudio.play();
+    this.audioContext.resume();
+    this.nodePanner.pan.value = 0;
+    this.audioFile.connect(this.nodePanner);
+    this.nodePanner.connect(this.audioContext.destination);
+    this.audio.play();
 
-    this.ambientAudio.onplaying = () => {
+    this.audio.onplaying = () => {
       this.setState({
         audio: true,
         audioStereo: true
       });
     };
 
-    this.ambientAudio.onended = () => {
+    this.audio.onended = () => {
       this.setState({
         audio: false,
         audioStereo: false
