@@ -32,9 +32,10 @@ class Index {
     */
   render () {
     if (document.getElementById('app')) {
+      const browser = Bowser.getParser(window.navigator.userAgent);
       const unSupportedBrowserList = ['Safari', 'Internet Explorer', 'Opera'];
 
-      if(unSupportedBrowserList.indexOf(Bowser.name) === -1) {
+      if(unSupportedBrowserList.indexOf(browser.getBrowser().name) === -1) {
         ReactDOM.render(
           <React.Fragment>
             <Navbar />
