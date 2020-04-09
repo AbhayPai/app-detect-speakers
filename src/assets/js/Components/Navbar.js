@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
             <li className='navbar--menu__list'>
               <a className='navbar--menu__link active' href='#'>
-                Project App Detector
+                Project
               </a>
             </li>
             <li className='navbar--menu__list'>
